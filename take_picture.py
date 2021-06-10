@@ -5,7 +5,7 @@ from picamera import PiCamera
 
 camera = PiCamera()
 # camera.resolution = (1024, 768)
-# camera.rotation = 180
+camera.rotation = 180
 
 
 def take_picture(directory):
@@ -14,7 +14,7 @@ def take_picture(directory):
     
     # Camera warm-up time
     camera.start_preview()
-    time.sleep(1)
+    time.sleep(2)
 
     camera.capture(filepath)
 

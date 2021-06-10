@@ -26,6 +26,8 @@ def get_args() -> argparse.Namespace:
 def main():
 
     args = get_args()
+    if not os.path.isdir(args.output):
+        os.mkdir(args.output)
 
     start_time = datetime.now()
 
@@ -54,13 +56,11 @@ def main():
     if timedelta(seconds=1) > timedelta(**interval_dict):
         interval_dict = {"minutes": 15}
 
-    interval = timedelta(**interval_dict)
-
     # starting scheduling
     times = generate_times(
         start_time.timestamp(),
         stop_time.timestamp(),
-        interval
+        interval_dict
     )
 
     s = sched.scheduler(time.time, time.sleep)
@@ -70,7 +70,7 @@ def main():
 
     print(f"Start Time:     {start_time}")
     print(f"Stop Time:      {stop_time}")
-    print(f"Interval:       {interval}")
+    print(f"Interval:       {timedelta(**interval_dict)}")
     print(f"Total Pictures: {len(times)}")
 
     s.run()
