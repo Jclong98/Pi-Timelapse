@@ -66,7 +66,7 @@ def main():
     s = sched.scheduler(time.time, time.sleep)
 
     for i, t in enumerate(times):
-        filename = f"{i:06d}.jpg"
+        filename = f"{i}.jpg"
         s.enterabs(
             t, 
             0, 

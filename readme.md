@@ -24,6 +24,6 @@ If you don't use any of the interval arguments, the interval will default to `15
 Use the following command to create a video of the output images
 
 ```
-ffmpeg -framerate 8 -i ./path/to/files/%06d.jpg ./path/to/files/output.mp4
+ffmpeg -framerate 8 -i ./path/to/files/%d.jpg ./path/to/files/output.mp4
 ```
 
