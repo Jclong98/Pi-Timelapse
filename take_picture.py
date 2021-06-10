@@ -8,15 +8,14 @@ camera = PiCamera()
 camera.rotation = 180
 
 
-def take_picture(directory):
-    filepath = f"{os.path.join(directory, str(time.time()))}.jpg"
-    print(f"{datetime.now()}: {filepath}")
+def take_picture(path):
+    print(f"{datetime.now()}: {path}")
     
     # Camera warm-up time
     camera.start_preview()
     time.sleep(2)
 
-    camera.capture(filepath)
+    camera.capture(path)
 
 if __name__ == "__main__":
     take_picture('./')

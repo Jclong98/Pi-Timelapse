@@ -65,8 +65,14 @@ def main():
 
     s = sched.scheduler(time.time, time.sleep)
 
-    for t in times:
-        s.enterabs(t, 0, take_picture, argument=(args.output,))
+    for i, t in enumerate(times):
+        filename = f"{i:06d}.jpg"
+        s.enterabs(
+            t, 
+            0, 
+            take_picture, 
+            argument=(os.path.join(args.output, filename),)
+        )
 
     print(f"Start Time:     {start_time}")
     print(f"Stop Time:      {stop_time}")
