@@ -1,7 +1,7 @@
 from picamera import PiCamera
 
 camera = PiCamera()
-camera.resolution = (1024, 768)
+# camera.resolution = (1024, 768)
 # camera.rotation = 180
 
 from datetime import datetime
