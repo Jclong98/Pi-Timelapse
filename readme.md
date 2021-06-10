@@ -1,6 +1,6 @@
 # Pi Timelapse
 
-Usage: run `python main.py` with any of the following arguments
+Usage: run `python main.py` with any of the following arguments.
 
 | arg             | description         | default |
 | --------------- | ------------------- | ------- |
@@ -14,3 +14,16 @@ Usage: run `python main.py` with any of the following arguments
 | -iM --i-minutes | interval in minutes | 0       |
 | -iS --i-seconds | interval in seconds | 0       |
 | -iD --i-days    | interval in day     | 0       |
+
+If you don't use any of the duration arguments, the duration will default to `100 years`.
+
+If you don't use any of the interval arguments, the interval will default to `15 minutes`.
+
+---
+
+Use the following command to create a video of the output images
+
+```
+ffmpeg -framerate 24 -i ./path/to/files/%d.png ./path/to/files/output.mp4
+```
+
