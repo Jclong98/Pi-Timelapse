@@ -5,6 +5,7 @@ Usage: run `python main.py` with any of the following arguments
 | arg             | description         | default |
 | --------------- | ------------------- | ------- |
 | -o --output     | Output directory    | ./      |
+| -dY --d-years   | duration in years   | 0       |
 | -dH --d-hours   | duration in hours   | 0       |
 | -dM --d-minutes | duration in minutes | 0       |
 | -dS --d-seconds | duration in seconds | 0       |
