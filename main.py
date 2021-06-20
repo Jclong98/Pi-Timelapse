@@ -10,6 +10,7 @@ from generate_times import generate_times
 def get_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument("-o", "--output", default="./", help="Output directory")
+    parser.add_argument("-sa", "--start-at", type=int, default=0, help="image number to start at")
 
     parser.add_argument("-dY", "--d-years",   type=int, default=0, help="duration in years")
     parser.add_argument("-dH", "--d-hours",   type=int, default=0, help="duration in hours")
@@ -68,7 +69,7 @@ def main():
     s = sched.scheduler(time.time, time.sleep)
 
     for i, t in enumerate(times):
-        filename = f"{i}.jpg"
+        filename = f"{i+args.start_at}.jpg"
         s.enterabs(
             t, 
             0, 
