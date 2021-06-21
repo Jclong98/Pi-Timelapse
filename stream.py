@@ -10,11 +10,16 @@ from http import server
 PAGE="""\
 <html>
 <head>
-<title>picamera MJPEG streaming demo</title>
+    <title>Pi Camera Stream</title>
+    <style>
+    img {
+        width:100%
+    }
+    </style>
 </head>
 <body>
-<h1>PiCamera MJPEG Streaming Demo</h1>
-<img src="stream.mjpg" width="1080" height="720" />
+    <h1>PiCamera MJPEG Stream</h1>
+    <img src="stream.mjpg" />
 </body>
 </html>
 """
