@@ -4,8 +4,8 @@ from datetime import datetime
 from picamera import PiCamera
 
 camera = PiCamera()
-# camera.resolution = (1024, 768)
-camera.rotation = 180
+camera.resolution = (1920, 1080)
+# camera.rotation = 180
 
 
 def take_picture(path):
@@ -18,4 +18,4 @@ def take_picture(path):
     camera.capture(path)
 
 if __name__ == "__main__":
-    take_picture('./')
+    take_picture('./pic.jpg')
