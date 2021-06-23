@@ -1,4 +1,4 @@
-import os, time
+import time
 from datetime import datetime
 
 from picamera import PiCamera
@@ -18,4 +18,10 @@ def take_picture(path):
     camera.capture(path)
 
 if __name__ == "__main__":
-    take_picture('./pic.jpg')
+    import argparse, os
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('directory')
+    args = parser.parse_args()
+    
+    take_picture(os.path.join(args.directory, f"{time.time()}.jpg"))
