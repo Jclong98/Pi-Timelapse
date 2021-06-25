@@ -10,7 +10,7 @@ def parse_time(time_string:str) -> timedelta:
     return td
 
 
-def read_schedule(path:str) -> list[datetime]:
+def read_schedule(path:str) -> list:
     """
     reads a json file with the following structure:
 
