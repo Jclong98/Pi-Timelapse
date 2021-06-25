@@ -1,6 +1,5 @@
-import json, time
-from datetime import datetime, timedelta, date
-from typing import List
+import json
+from datetime import datetime, timedelta
 
 def parse_time(time_string:str) -> timedelta:
     """
